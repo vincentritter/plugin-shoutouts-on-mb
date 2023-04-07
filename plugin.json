@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "title": "shoutouts.lol embed",
+  "description": "Add your shoutouts.lol embed with ease, using a shortcode.",
+  "fields": [
+    {
+      "field": "params.shoutouts_on_mb_embed_code",
+      "label": "Embed Code",
+      "placeholder": "...embed code found on shoutouts.lol"
+    }
+  ]
+}
