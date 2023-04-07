@@ -1,5 +1,7 @@
 # shoutouts.lol embed on Micro.blog
 
+![shoutouts.lol embed on Micro.blog](docs/shoutout-embed-in-footer.jpg)
+
 Adds your shoutouts.lol embed script tag using the Hugo shortcode `{{< shoutouts >}}` within your content. If you want to pass in a custom theme, you can do so by passing in the `theme` parameter, for example `{{< shoutouts theme="38" >}}`.
 
 To embed it into your template files, for example into the footer, you can import the shoutouts embed partial using `{{ partial "shoutouts/embed.html" . }}`.
