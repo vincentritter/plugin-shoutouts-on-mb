@@ -1,6 +1,6 @@
 # shoutouts.lol embed on Micro.blog
 
-![shoutouts.lol embed on Micro.blog](docs/shoutout-embed-in-footer.jpg)
+![shoutouts.lol embed on Micro.blog](https://github.com/vincentritter/plugin-shoutouts-on-mb/raw/main/docs/shoutout-embed-in-footer.jpg)
 
 Adds your shoutouts.lol embed script tag using the Hugo shortcode `{{< shoutouts >}}` within your content. If you want to pass in a custom theme, you can do so by passing in the `theme` parameter, for example `{{< shoutouts theme="38" >}}`.
 
