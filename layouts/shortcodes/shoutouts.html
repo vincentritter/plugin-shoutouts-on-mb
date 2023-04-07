@@ -1,3 +1,4 @@
+{{ $theme := .Get "theme" }}
 {{ if ne ($.Site.Params.shoutouts_on_mb_embed_code | default "") "" }}
-  <script src="https://shoutouts.lol/embed/{{$.Site.Params.shoutouts_on_mb_embed_code}}.js" defer></script>
+  <script src="https://shoutouts.lol/embed/{{$.Site.Params.shoutouts_on_mb_embed_code}}.js{{ with $theme }}?theme={{ . }}{{ end }}" defer></script>
 {{ end }}
