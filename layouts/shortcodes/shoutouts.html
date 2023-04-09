@@ -4,6 +4,19 @@
   {{ $theme = .Get "theme" }}
   {{ $shoutout = .Get "shoutout" }}
 {{ end }}
+
 {{ if ne ($.Site.Params.shoutouts_on_mb_embed_code | default "") "" }}
-  <script src="{{ (printf "https://shoutouts.lol/embed/%s.js%s%s" $.Site.Params.shoutouts_on_mb_embed_code (if $theme (printf "?theme=%s" $theme) "") (if $shoutout (if $theme (printf "&shoutout=%s" $shoutout) (printf "?shoutout=%s" $shoutout)) "")) | safeURL }}" defer></script>
+  {{ $separator := "" }}
+  {{ $themeQueryString := "" }}
+  {{ if $theme }}
+    {{ $themeQueryString = (print "?theme=" $theme) }}
+    {{ $separator = "&" }}
+  {{ end }}
+
+  {{ $shoutoutQueryString := "" }}
+  {{ if $shoutout }}
+    {{ $shoutoutQueryString = (print $separator "shoutout=" $shoutout) }}
+  {{ end }}
+
+  <script src="https://shoutouts.lol/embed/{{$.Site.Params.shoutouts_on_mb_embed_code}}.js{{ $themeQueryString }}{{ $shoutoutQueryString }}" defer></script>
 {{ end }}
