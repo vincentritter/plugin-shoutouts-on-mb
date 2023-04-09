@@ -1,7 +1,9 @@
 {{ $theme := "" }}
+{{ $shoutout := "" }}
 {{ if .IsNamedParams }}
   {{ $theme = .Get "theme" }}
+  {{ $shoutout = .Get "shoutout" }}
 {{ end }}
 {{ if ne ($.Site.Params.shoutouts_on_mb_embed_code | default "") "" }}
-  <script src="https://shoutouts.lol/embed/{{$.Site.Params.shoutouts_on_mb_embed_code}}.js{{ if $theme }}?theme={{ $theme }}{{ end }}" defer></script>
+  <script src="https://shoutouts.lol/embed/{{$.Site.Params.shoutouts_on_mb_embed_code}}.js{{ with $theme }}?theme={{ . }}{{ end }}{{ if and $theme $shoutout }}&{{ else if $shoutout }}?{{ end }}{{ with $shoutout }}shoutout={{ . }}{{ end }}" defer></script>
 {{ end }}
