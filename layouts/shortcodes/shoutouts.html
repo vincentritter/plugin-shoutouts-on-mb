@@ -11,6 +11,8 @@
   {{ if $theme }}
     {{ $themeQueryString = (print "?theme=" $theme) }}
     {{ $separator = "&" }}
+  {{ else if $shoutout }}
+    {{ $separator = "?" }}
   {{ end }}
 
   {{ $shoutoutQueryString := "" }}
