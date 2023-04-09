@@ -3,10 +3,12 @@
 {{ if isset . "theme" }}
   {{ $theme = .theme }}
 {{ end }}
+
 {{ $shoutout := "" }}
 {{ if isset . "shoutout" }}
   {{ $shoutout = .shoutout }}
 {{ end }}
+
 {{ if ne ($context.Site.Params.shoutouts_on_mb_embed_code | default "") "" }}
-  <script src="https://shoutouts.lol/embed/{{$context.Site.Params.shoutouts_on_mb_embed_code}}.js{{ with $theme }}?theme={{ . }}{{ end }}{{ if and $theme $shoutout }}&{{ else if $shoutout }}?{{ end }}{{ with $shoutout }}shoutout={{ . }}{{ end }}" defer></script>
+  <script src="{{ (printf "https://shoutouts.lol/embed/%s.js%s%s" $context.Site.Params.shoutouts_on_mb_embed_code (if $theme (printf "?theme=%s" $theme) "") (if $shoutout (if $theme (printf "&shoutout=%s" $shoutout) (printf "?shoutout=%s" $shoutout)) "")) | safeURL }}" defer></script>
 {{ end }}
