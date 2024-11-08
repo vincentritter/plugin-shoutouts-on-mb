@@ -22,5 +22,5 @@
     {{ $shoutoutQueryString = (print $separator "shoutout=" $shoutout) }}
   {{ end }}
   
-  <script src="https://shoutouts.lol/embed/{{$context.Site.Params.shoutouts_on_mb_embed_code}}.js{{ $themeQueryString }}{{ $shoutoutQueryString }}" defer></script>
+  <script src="https://shoutouts.page/embed/{{$context.Site.Params.shoutouts_on_mb_embed_code}}.js{{ $themeQueryString }}{{ $shoutoutQueryString }}" defer></script>
 {{ end }}
